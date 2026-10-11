@@ -1,0 +1,5 @@
+# used for CLI functions
+typer
+
+# used to make aegis whl file
+build

@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "architecture_drawing"
+version = "0.1.0"
+description = "Traceplan Framework"
+authors = [{ name = "Daniel Beard" }]
+requires-python = ">=3.10"
+dependencies = [ "typer" ]
+
+[project.scripts]
+drawing = "architecture_drawing.cli:app"

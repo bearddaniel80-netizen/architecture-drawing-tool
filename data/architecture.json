@@ -1,0 +1,60 @@
+{
+  "title": "Application Architecture",
+  "direction": "vertical",
+  "nodes": {
+    "caddy": {
+      "label": "Caddy",
+      "children": [
+        {
+          "id": "django",
+          "label": "Django Portal",
+          "children": [
+            {
+              "id": "service-manager",
+              "label": "Service Manager",
+              "children": [
+                {
+                  "id": "host-agent",
+                  "label": "Host Agent",
+                  "children": [
+                    {
+                      "id": "docker",
+                      "label": "Docker",
+                      "children": [
+                        {"id": "app-a", "label": "A"},
+                        {"id": "app-b", "label": "B"},
+                        {"id": "app-c", "label": "C"}
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "active-app",
+          "label": "Active Application",
+          "children": [
+            {
+              "id": "bff",
+              "label": "BFF",
+              "children": [
+                {
+                  "id": "fastapi",
+                  "label": "FastAPI",
+                  "children": [
+                    {
+                      "id": "subprocess",
+                      "label": "subprocess"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

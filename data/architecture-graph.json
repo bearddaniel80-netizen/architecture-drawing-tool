@@ -1,0 +1,50 @@
+
+{
+  "title": "Application Architecture",
+  "direction": "vertical",
+  "nodes": {
+    "caddy": {
+      "label": "Caddy",
+      "children": [
+        {
+          "id": "django",
+          "label": "Django Portal",
+          "children": [
+            {
+              "id": "service-manager",
+              "label": "Service Manager"
+            }
+          ]
+        },
+        {
+          "id": "active-app",
+          "label": "Active Application",
+          "children": [
+            {
+              "id": "bff",
+              "label": "BFF",
+              "children": [
+                {
+                  "id": "fastapi",
+                  "label": "FastAPI"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "edges": [
+    {
+      "from": "django",
+      "to": "fastapi",
+      "label": "API request"
+    },
+    {
+      "from": "service-manager",
+      "to": "active-app",
+      "label": "manages"
+    }
+  ]
+}
